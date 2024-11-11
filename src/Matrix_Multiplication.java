@@ -24,7 +24,7 @@ public class Matrix_Multiplication {
 
     /**
      * Validation int.
-     *
+     * Checks to make sure the input data is an integer
      * @return the int
      */
     public static int validation(){
@@ -48,28 +48,28 @@ public class Matrix_Multiplication {
 
 //     int r2 = matrix2.length;
         int c2 = matrix2[0].length;
-        int[][] finMatrix = new int[r1][c2];
+        int[][] finalMatrix = new int[r1][c2];
 
         for (int i = 0; i < r1; i++) {
             for (int j = 0; j < c2; j++) {
                 for (int k = 0; k < c1; k++) {
-                    finMatrix[i][j] += matrix1[i][k] * matrix2[k][j];
+                    finalMatrix[i][j] += matrix1[i][k] * matrix2[k][j];
                 }
             }
         }
-        return finMatrix;
+        return finalMatrix;
     }
 
     /**
      * Verify matrix multiplication int.
-     *
+     * Confirms if the 2 matrices can be multiplied
      * @param column1 the column 1
      * @param row2    the row 2
      * @return the int
      */
     public static int verifyMatrixMultiplication(int column1, int row2){
         while (row2 != column1) {
-            System.out.println("Matrix multiplication is not possible. Number of columns for matrix A should be the same as number of rows for matrix B");
+            System.out.println("Matrix multiplication is not possible. Number of columns for the first matrix should be the same as number of rows for the second matrix");
             System.out.println("Enter the number of rows for the second matrix again: ");
             row2 = validation();
         }
